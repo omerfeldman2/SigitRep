@@ -129,6 +129,14 @@ def ID_Validation(id):
     return False
 
 
+# Exrecise 6:
+# Map Function Exrecise:
+def Map(Func, List):
+    newList = []
+    for obj in List:
+        newList.append(Func(obj))
+    return newList
+
 def main():
     # Main function:
     # checks the pass code and the TriesLeft
@@ -157,11 +165,19 @@ def main():
     st = "aabbbbcdddeaaaaa"
     st = ContractionString(st)
     print(st)
-    """
+
 
     #Exrecise 5 Example:
     id = '322536319'
     print(ID_Validation(id))
+    """
+
+    #Exrecise 6 Example:
+    ls = ["322536319", "12345", "207301949"]
+    newList = Map(ID_Validation, ls)
+    for obj in newList:
+        print(obj)
+
 
 if __name__ == '__main__':
     main()
