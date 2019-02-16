@@ -92,6 +92,21 @@ def TicTacToe(Mat):
     return
 
 
+# Exrecise 4:
+# String contraction Exrecise:
+def ContractionString(st):
+    if len(st) == 0:
+        return ""
+    count = 0
+    let = st[0]
+    for letter in st:
+        if letter == let:
+            count += 1
+        else:
+            break
+    return "" + str(let) + "" + str(count) + "" + str(ContractionString(st[count:]))
+
+
 def main():
     # Main function:
     # checks the pass code and the TriesLeft
@@ -109,12 +124,17 @@ def main():
             TriesLeft -= 1
     # Exreicse 2 init:
     CalcSum()
-    """
+
     # Exrecise 3 init (player 1 win situtation):
     Mat = [[1,0,2],
            [1,0,2],
            [1,2,0]]
     TicTacToe(Mat)
+    """
+    st = "aabbbbcdddeaaaaa"
+    st = ContractionString(st)
+    print(st)
+
 
 if __name__ == '__main__':
     main()
